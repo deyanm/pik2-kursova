@@ -19,7 +19,8 @@ typedef struct Grave {
     char name[NAME_SIZE];
     int age;
     sLoc_t location;
-    char date[NAME_SIZE];
+    char startDate[NAME_SIZE];
+    char endDate[NAME_SIZE];
 } sGrave_t;
 
 typedef struct Node {
@@ -43,5 +44,7 @@ sNode_t* findUnique(sNode_t *head, long unique);
 void showMenu(FILE **fp, const char filename[]);
 sNode_t* isLocationFree(sNode_t *head, sLoc_t *loc);
 sGrave_t* addNewGrave(void);
+int countLeapYears(struct tm *tm);
+long getDifference(struct tm *tm1, struct tm *tm2);
 
 #endif
